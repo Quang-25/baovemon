@@ -15,7 +15,12 @@ namespace Baibaovemon
         public Form1()
         {
             InitializeComponent(); 
-            d
+            
+        }
+
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
