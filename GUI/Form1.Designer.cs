@@ -76,7 +76,7 @@
             this.quảnLýToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1097, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1097, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -88,7 +88,7 @@
             this.đăngXuấtToolStripMenuItem1,
             this.đổiMậtKhẩuToolStripMenuItem1});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Hệ thống";
             // 
             // đăngNhậpToolStripMenuItem1
@@ -120,7 +120,7 @@
             this.quảnLýXeTrongKhoToolStripMenuItem1,
             this.quảnLýPhụKiệnToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.quảnLýToolStripMenuItem.Text = "Quản lý bán xe";
             // 
             // quảnLýKháchHàngToolStripMenuItem
@@ -260,9 +260,9 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnKhachhang);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 489);
+            this.panel1.Size = new System.Drawing.Size(219, 487);
             this.panel1.TabIndex = 4;
             // 
             // button6
@@ -365,9 +365,9 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(219, 28);
+            this.panel2.Location = new System.Drawing.Point(219, 30);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(878, 489);
+            this.panel2.Size = new System.Drawing.Size(878, 487);
             this.panel2.TabIndex = 5;
             // 
             // form1

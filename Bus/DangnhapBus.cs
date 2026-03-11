@@ -7,13 +7,13 @@ using DATA;
 using DTO;
 namespace Bus { 
 
-    public class NhanVienBus
+    public class DangnhapBus
     {
-        NhanVienDal dal = new NhanVienDal();
+        DangnhapDal dal = new DangnhapDal();
 
         public bool CheckLogin(string user, string pass)
         {
-            NhanVienDTO nv = new NhanVienDTO();
+            DangnhapDTO nv = new DangnhapDTO();
 
             nv.TenDangNhap = user;
             nv.MatKhau =  pass;
@@ -22,7 +22,7 @@ namespace Bus {
         }
         public bool CheckQuyen(string user, string pass)
         {
-            NhanVienDTO nv = new NhanVienDTO();
+            DangnhapDTO nv = new DangnhapDTO();
             nv.TenDangNhap = user;
             nv.MatKhau = pass;
             return dal.CheckQuyen(nv);

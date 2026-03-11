@@ -3,11 +3,11 @@ using System.Data.SqlClient;
 using System.Text;
 namespace DATA
 {
-    public class NhanVienDal
+    public class DangnhapDal
     {
         string ketnoi = @"Data Source=LAPTOP-VN022S39\SQLEXPRESS;Initial Catalog= QuanLyBanXe;Integrated Security=True";
 
-        public bool CheckLogin(NhanVienDTO nv)
+        public bool CheckLogin(DangnhapDTO nv)
         {
             nv.TenDangNhap = nv.TenDangNhap.Trim();
             nv.MatKhau = nv.MatKhau.Trim();
@@ -29,7 +29,7 @@ namespace DATA
                 return count > 0;
             }
         }
-        public bool CheckQuyen(NhanVienDTO nv)
+        public bool CheckQuyen(DangnhapDTO nv)
         {
             using (SqlConnection conn = new SqlConnection(ketnoi))
             {

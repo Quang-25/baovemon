@@ -30,7 +30,7 @@ namespace Baibaovemon.GUI
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            NhanVienBus bus = new NhanVienBus();
+            DangnhapBus bus = new DangnhapBus();
             
 
             bool kq = bus.CheckLogin(txtTenDangNhap.Text, txtMatKhau.Text);
