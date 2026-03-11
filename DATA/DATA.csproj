@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="NhanVienDal.cs" />
+    <Compile Include="KhachhangDal.cs" />
+    <Compile Include="DangnhapDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
