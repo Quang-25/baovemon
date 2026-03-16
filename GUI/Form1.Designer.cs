@@ -76,7 +76,7 @@
             this.quảnLýToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1097, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1259, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -88,25 +88,25 @@
             this.đăngXuấtToolStripMenuItem1,
             this.đổiMậtKhẩuToolStripMenuItem1});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Hệ thống";
             // 
             // đăngNhậpToolStripMenuItem1
             // 
             this.đăngNhậpToolStripMenuItem1.Name = "đăngNhậpToolStripMenuItem1";
-            this.đăngNhậpToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.đăngNhậpToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.đăngNhậpToolStripMenuItem1.Text = "Đăng nhập";
             // 
             // đăngXuấtToolStripMenuItem1
             // 
             this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
             // 
             // đổiMậtKhẩuToolStripMenuItem1
             // 
             this.đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
-            this.đổiMậtKhẩuToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.đổiMậtKhẩuToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
             // 
             // quảnLýToolStripMenuItem
@@ -120,7 +120,7 @@
             this.quảnLýXeTrongKhoToolStripMenuItem1,
             this.quảnLýPhụKiệnToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.quảnLýToolStripMenuItem.Text = "Quản lý bán xe";
             // 
             // quảnLýKháchHàngToolStripMenuItem
@@ -260,9 +260,9 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnKhachhang);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 487);
+            this.panel1.Size = new System.Drawing.Size(219, 504);
             this.panel1.TabIndex = 4;
             // 
             // button6
@@ -365,22 +365,23 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(219, 30);
+            this.panel2.Location = new System.Drawing.Point(219, 28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(878, 487);
+            this.panel2.Size = new System.Drawing.Size(1040, 504);
             this.panel2.TabIndex = 5;
             // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1097, 517);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1259, 532);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "form1";
             this.Text = "Quản lý bán xe ô tô";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
