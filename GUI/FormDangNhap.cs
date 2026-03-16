@@ -31,7 +31,7 @@ namespace Baibaovemon.GUI
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             DangnhapBus bus = new DangnhapBus();
-            
+
 
             bool kq = bus.CheckLogin(txtTenDangNhap.Text, txtMatKhau.Text);
 
@@ -58,6 +58,20 @@ namespace Baibaovemon.GUI
             }
 
         }
+
+        private void chkHienMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkHienMatKhau.Checked)
+            {
+                txtMatKhau.PasswordChar = '\0';
+            }
+            else
+            {
+                txtMatKhau.PasswordChar = '*';
+            }
+        }
+
+        
     }
 }    
 

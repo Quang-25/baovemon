@@ -143,6 +143,7 @@
             this.chkHienMatKhau.TabIndex = 13;
             this.chkHienMatKhau.Text = "Hiện mật khẩu";
             this.chkHienMatKhau.UseVisualStyleBackColor = true;
+            this.chkHienMatKhau.CheckedChanged += new System.EventHandler(this.chkHienMatKhau_CheckedChanged);
             // 
             // cmb_luu
             // 
@@ -154,6 +155,7 @@
             this.cmb_luu.TabIndex = 14;
             this.cmb_luu.Text = "Lưu mật khẩu";
             this.cmb_luu.UseVisualStyleBackColor = true;
+          
             // 
             // pictureBox1
             // 
@@ -203,6 +205,7 @@
             this.Controls.Add(this.lblTieuDe);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDangNhap";
             this.Load += new System.EventHandler(this.FormDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
