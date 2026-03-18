@@ -44,8 +44,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="HopDongBUS.cs" />
     <Compile Include="Khachhang.cs" />
+=======
+    <Compile Include="KhachhangBus.cs" />
+>>>>>>> 3b4f7bb32175937fe83f3b329f4aa45a36c85c05
 =======
     <Compile Include="KhachhangBus.cs" />
 >>>>>>> 3b4f7bb32175937fe83f3b329f4aa45a36c85c05
