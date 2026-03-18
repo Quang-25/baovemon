@@ -34,7 +34,7 @@ namespace Baibaovemon
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
-        }
+        }  
 
         private void form1_Load(object sender, EventArgs e)
         {

@@ -30,7 +30,10 @@ namespace GUI
              
                 btn_Xoa.Enabled = false;
             }
-
+            if (quyen !="Admin")
+            {
+                btn_Sua.Enabled = false;
+            }
         }
         void Load_Data()
         {

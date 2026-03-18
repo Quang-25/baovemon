@@ -1,12 +1,10 @@
 ﻿using DTO;
 using System.Data.SqlClient;
-using System.Text;
+
 namespace DATA
 {
-    public class DangnhapDal
+    public class DangnhapDal : DBConnect
     {
-        string ketnoi = @"Data Source=LAPTOP-VN022S39\SQLEXPRESS;Initial Catalog= QuanLyBanXe;Integrated Security=True";
-
         public bool CheckLogin(DangnhapDTO nv)
         {
             nv.TenDangNhap = nv.TenDangNhap.Trim();
@@ -14,24 +12,23 @@ namespace DATA
 
             using (SqlConnection conn = new SqlConnection(ketnoi))
             {
+                
                 conn.Open();
-
                 string sql = "SELECT COUNT(*) FROM NhanVien WHERE TenDangNhap=@user AND MatKhau=@pass";
-
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@user", nv.TenDangNhap);
                 cmd.Parameters.AddWithValue("@pass", nv.MatKhau);
-               
 
                 int count = (int)cmd.ExecuteScalar();
 
                 return count > 0;
             }
         }
+
         public bool CheckQuyen(DangnhapDTO nv)
         {
-            using (SqlConnection conn = new SqlConnection(ketnoi))
+            using (SqlConnection conn = new SqlConnection(ketnoi)) 
             {
                 conn.Open();
 
@@ -40,19 +37,17 @@ namespace DATA
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@user", nv.TenDangNhap);
                 cmd.Parameters.AddWithValue("@pass", nv.MatKhau);
-               
+
                 object result = cmd.ExecuteScalar();
 
                 if (result != null)
                 {
-                    nv.Quyen= result.ToString();
+                    nv.Quyen = result.ToString();
                     return nv.Quyen == "Admin";
                 }
 
                 return false;
             }
         }
-       
-        
     }
 }
