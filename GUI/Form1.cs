@@ -43,13 +43,9 @@ namespace Baibaovemon
 
         private void btnKhachhang_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
-
-            FormKhachhang f = new FormKhachhang();
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            panel2.Controls.Add(f);
-            f.Show();
+            FormKhachhang f = new FormKhachhang(quyen);
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
