@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bus</RootNamespace>
     <AssemblyName>Bus</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,8 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <Compile Include="HopDongBUS.cs" />
+    <Compile Include="Khachhang.cs" />
+=======
     <Compile Include="KhachhangBus.cs" />
+>>>>>>> 3b4f7bb32175937fe83f3b329f4aa45a36c85c05
+=======
+    <Compile Include="KhachhangBus.cs" />
+>>>>>>> 3b4f7bb32175937fe83f3b329f4aa45a36c85c05
     <Compile Include="DangnhapBus.cs" />
+    <Compile Include="NhanVienBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

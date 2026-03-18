@@ -46,6 +46,33 @@ namespace Baibaovemon
             FormKhachhang f = new FormKhachhang(quyen);
             f.StartPosition = FormStartPosition.CenterScreen;
             f.ShowDialog();
+<<<<<<< HEAD
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+
+            frmNhanVien f = new frmNhanVien();
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+
+            panel2.Controls.Add(f);
+            f.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+
+            frmHopDong f = new frmHopDong();
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+
+            panel2.Controls.Add(f);
+            f.Show();
+=======
+>>>>>>> 3b4f7bb32175937fe83f3b329f4aa45a36c85c05
         }
     }
 }
