@@ -132,6 +132,7 @@
             this.btnThoat.TabIndex = 12;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // chkHienMatKhau
             // 
@@ -155,7 +156,6 @@
             this.cmb_luu.TabIndex = 14;
             this.cmb_luu.Text = "Lưu mật khẩu";
             this.cmb_luu.UseVisualStyleBackColor = true;
-          
             // 
             // pictureBox1
             // 

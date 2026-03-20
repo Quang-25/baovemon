@@ -59,7 +59,7 @@ namespace GUI
             cmbTrangThai.Items.Add("Đã hủy");
         }
 
-        // ================= THÊM =================
+       
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtSoHD.Text) ||
@@ -83,7 +83,7 @@ namespace GUI
                 HopDongDTO hd = new HopDongDTO();
 
                 hd.SoHopDong = txtSoHD.Text;
-                hd.MaDongXe = Convert.ToInt32(txtMaDongXe.Text);
+                hd.MaXe = Convert.ToInt32(txtMaDongXe.Text);
                 hd.MaKhachHang = Convert.ToInt32(txtMaKhachHang.Text);
                 hd.MaNhanVien = Convert.ToInt32(txtMaNhanVien.Text);
 
@@ -129,7 +129,7 @@ namespace GUI
             }
         }
 
-        // ================= CLICK GRID =================
+       
         private void dgvHopDong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvHopDong.CurrentRow.Index;
@@ -219,7 +219,6 @@ namespace GUI
                 return;
             }
 
-            // 🔴 Thiếu dữ liệu
             if (string.IsNullOrWhiteSpace(txtSoHD.Text) ||
                 string.IsNullOrWhiteSpace(txtMaDongXe.Text) ||
                 string.IsNullOrWhiteSpace(txtMaKhachHang.Text) ||
@@ -243,7 +242,7 @@ namespace GUI
                 hd.MaHopDong = int.Parse(txtMaHD.Text);
                 hd.SoHopDong = txtSoHD.Text;
 
-                hd.MaDongXe = Convert.ToInt32(txtMaDongXe.Text);
+                hd.MaXe = Convert.ToInt32(txtMaDongXe.Text);
                 hd.MaKhachHang = Convert.ToInt32(txtMaKhachHang.Text);
                 hd.MaNhanVien = Convert.ToInt32(txtMaNhanVien.Text);
 

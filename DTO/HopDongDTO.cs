@@ -7,7 +7,7 @@ namespace DTO
         public int MaHopDong { get; set; }
         public string SoHopDong { get; set; }
 
-        public int MaDongXe { get; set; }
+        public int MaXe { get; set; }
         public int MaKhachHang { get; set; }
         public int MaNhanVien { get; set; }
 

@@ -100,7 +100,7 @@ namespace GUI
                 return;
             }
 
-            // 🔥 CHECK HỌ TÊN
+            
             if (!KiemTraHoTen(txtHoTen.Text))
             {
                 MessageBox.Show("Họ tên không hợp lệ!");

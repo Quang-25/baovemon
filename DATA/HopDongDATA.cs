@@ -4,15 +4,13 @@ using DTO;
 
 namespace DATA
 {
-    public class HopDongDATA
+    public class HopDongDATA : DBConnect
     {
-        string conn = @"Data Source=PHAMVANTRUONG\VANTRUONG;
-                        Initial Catalog=QuanLyBanXe;
-                        Integrated Security=True";
+        
 
         public DataTable GetHopDong()
         {
-            SqlConnection c = new SqlConnection(conn);
+            SqlConnection c = new SqlConnection(ketnoi);
 
             SqlDataAdapter da = new SqlDataAdapter(
             "SELECT * FROM HopDong", c);
@@ -25,21 +23,21 @@ namespace DATA
 
         public void Insert(HopDongDTO hd)
         {
-            SqlConnection c = new SqlConnection(conn);
+            SqlConnection c = new SqlConnection(ketnoi);
 
             string sql = @"INSERT INTO HopDong
-            (SoHopDong,MaDongXe,MaKhachHang,MaNhanVien,NgayKy,
+            (SoHopDong,MaXe,MaKhachHang,MaNhanVien,NgayKy,
             GiaBanThoaThuan,ThueVAT,PhiTruocBa,
             TienNganHangChoVay,TongGiaTriHopDong,
             SoTienDaDatCoc,GhiChu,Trangthai)
 
-            VALUES(@So,@DongXe,@KH,@NV,@Ngay,
+            VALUES(@So,@MaXe,@KH,@NV,@Ngay,
             @Gia,@VAT,@Phi,@Vay,@Tong,@DatCoc,@GhiChu,@TrangThai)";
 
             SqlCommand cmd = new SqlCommand(sql, c);
 
             cmd.Parameters.AddWithValue("@So", hd.SoHopDong);
-            cmd.Parameters.AddWithValue("@DongXe", hd.MaDongXe);
+            cmd.Parameters.AddWithValue("@MaXe", hd.MaXe);
             cmd.Parameters.AddWithValue("@KH", hd.MaKhachHang);
             cmd.Parameters.AddWithValue("@NV", hd.MaNhanVien);
             cmd.Parameters.AddWithValue("@Ngay", hd.NgayKy);
@@ -62,11 +60,11 @@ namespace DATA
 
         public void Update(HopDongDTO hd)
         {
-            SqlConnection c = new SqlConnection(conn);
+            SqlConnection c = new SqlConnection(ketnoi);
 
             string sql = @"UPDATE HopDong SET
             SoHopDong=@So,
-            MaDongXe=@DongXe,
+            MaXe=@MaXe,
             MaKhachHang=@KH,
             MaNhanVien=@NV,
             NgayKy=@Ngay,
@@ -84,7 +82,7 @@ namespace DATA
 
             cmd.Parameters.AddWithValue("@Ma", hd.MaHopDong);
             cmd.Parameters.AddWithValue("@So", hd.SoHopDong);
-            cmd.Parameters.AddWithValue("@DongXe", hd.MaDongXe);
+            cmd.Parameters.AddWithValue("@MaXe", hd.MaXe);
             cmd.Parameters.AddWithValue("@KH", hd.MaKhachHang);
             cmd.Parameters.AddWithValue("@NV", hd.MaNhanVien);
             cmd.Parameters.AddWithValue("@Ngay", hd.NgayKy);
@@ -107,7 +105,7 @@ namespace DATA
 
         public void Delete(int id)
         {
-            SqlConnection c = new SqlConnection(conn);
+            SqlConnection c = new SqlConnection(ketnoi);
 
             SqlCommand cmd = new SqlCommand(
             "DELETE FROM HopDong WHERE MaHopDong=@id", c);
@@ -121,14 +119,14 @@ namespace DATA
 
         public DataTable Search(string so)
         {
-            SqlConnection c = new SqlConnection(conn);
+            SqlConnection c = new SqlConnection(ketnoi);
 
             string sql = @"SELECT * FROM HopDong 
                    WHERE SoHopDong LIKE N'%' + @so + '%'
                    OR CAST(MaHopDong AS NVARCHAR) LIKE '%' + @so + '%'
                    OR CAST(MaKhachHang AS NVARCHAR) LIKE '%' + @so + '%'
                    OR CAST(MaNhanVien AS NVARCHAR) LIKE '%' + @so + '%'
-                   OR CAST(MaDongXe AS NVARCHAR) LIKE '%' + @so + '%'
+                   OR CAST(MaXe AS NVARCHAR) LIKE '%' + @so + '%'
                    OR Trangthai LIKE N'%' + @so + '%'
                    OR GhiChu LIKE N'%' + @so + '%'";
 

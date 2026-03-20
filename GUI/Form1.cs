@@ -1,4 +1,5 @@
-﻿using GUI;
+﻿using Baibaovemon.GUI;
+using GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,10 +35,11 @@ namespace Baibaovemon
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
-        }
+        }  
 
         private void form1_Load(object sender, EventArgs e)
         {
+            lbl_hienthi.Text = "Xin chào: " + CurrentUser.TenDangNhap;
 
         }
 
@@ -46,33 +48,56 @@ namespace Baibaovemon
             FormKhachhang f = new FormKhachhang(quyen);
             f.StartPosition = FormStartPosition.CenterScreen;
             f.ShowDialog();
-<<<<<<< HEAD
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
+            
 
             frmNhanVien f = new frmNhanVien();
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-
-            panel2.Controls.Add(f);
-            f.Show();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
-
+            
             frmHopDong f = new frmHopDong();
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog();
+            
 
-            panel2.Controls.Add(f);
-            f.Show();
-=======
->>>>>>> 3b4f7bb32175937fe83f3b329f4aa45a36c85c05
+
+        }
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Ban co muon dang xuat","Thong bao",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                FormDangNhap f = new FormDangNhap();
+                f.Show();
+                this.Hide();
+
+            }
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_doimatkhau_Click(object sender, EventArgs e)
+        {
+            FormDoimatkhau f = new FormDoimatkhau();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog();
+        }
+
+        private void lbl_hienthi_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

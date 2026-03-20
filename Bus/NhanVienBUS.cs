@@ -31,7 +31,6 @@ public class NhanVienBUS
         return data.Search(ten);
     }
 
-    // 🔥 CHECK TRÙNG KHI THÊM
     public bool TrungTenDangNhap(string tenDangNhap)
     {
         DataTable dt = data.GetNhanVien();
@@ -47,7 +46,7 @@ public class NhanVienBUS
         return false;
     }
 
-    // 🔥 CHECK TRÙNG KHI SỬA
+    
     public bool TrungTenDangNhapKhiSua(int maNV, string tenDangNhap)
     {
         DataTable dt = data.GetNhanVien();

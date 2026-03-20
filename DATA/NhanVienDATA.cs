@@ -5,9 +5,9 @@ using DTO;
 
 namespace DATA
 {
-    public class NhanVienDATA
+    public class NhanVienDATA : DBConnect
     {
-        string ketnoi = @"Data Source=PHAMVANTRUONG\VANTRUONG;Initial Catalog=QuanLyBanXe;Integrated Security=True";
+        
 
         public DataTable GetNhanVien()
         {

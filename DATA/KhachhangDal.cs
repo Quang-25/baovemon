@@ -9,95 +9,132 @@ using System.Data.SqlClient;
 using System.Data;
 namespace DATA
 {
-    public class KhachhangDal
+    public class KhachhangDal:DBConnect
     {
-        string ketnoi = @"Data Source=LAPTOP-VN022S39\SQLEXPRESS;Initial Catalog= QuanLyBanXe;Integrated Security=True";
-        public DataTable Getkhachhang()
-        {
-            SqlConnection conn = new SqlConnection(ketnoi);
-            string sql = "select * from Khachhang";
-            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            public DataTable Getkhachhang()
+            {
+            using (SqlConnection con = new SqlConnection(ketnoi))
+            {
+                string sql = "SELECT * FROM Khachhang";
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
 
         }
         public bool Themkhachhang(KhachhangDTO dto)
         {
-            SqlConnection con = new SqlConnection(ketnoi);
-            string sql = "Insert into Khachhang (Hoten, Sodienthoai, Email, Diachi) Values(@HoTen,@Sodienthoai,@Email,@Diachi)";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@HoTen", dto.Hoten);
-            cmd.Parameters.AddWithValue("@Sodienthoai", dto.Sodienthoai);
-            cmd.Parameters.AddWithValue("@Email", dto.Email);
-            cmd.Parameters.AddWithValue("@Diachi", dto.Diachi);
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ketnoi))
+                {
+                    con.Open();
 
-            con.Open();
-            int ketqua = cmd.ExecuteNonQuery();
-            con.Close();
-            return ketqua > 0;
+                    string sql = @"INSERT INTO Khachhang (Hoten, Sodienthoai, Email, Diachi) VALUES(@Hoten,@Sodienthoai,@Email,@Diachi)";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@Hoten", dto.Hoten);
+                    cmd.Parameters.AddWithValue("@Sodienthoai", dto.Sodienthoai);
+                    cmd.Parameters.AddWithValue("@Email", dto.Email);
+                    cmd.Parameters.AddWithValue("@Diachi", dto.Diachi);
 
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (Exception ex) 
+            { 
+                throw new Exception("Loi khi them khach hang:" + ex.Message);
+            }
         }
 
         public bool suakhach(KhachhangDTO dto)
         {
-            SqlConnection con = new SqlConnection(ketnoi);
-            string sql = "Update Khachhang set Hoten=@HoTen, Sodienthoai=@Sodienthoai, Email=@Email, Diachi=@Diachi where Makhachhang=@Makhachhang";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@Hoten", dto.Hoten);
-            cmd.Parameters.AddWithValue("@Sodienthoai", dto.Sodienthoai);
-            cmd.Parameters.AddWithValue("@Email", dto.Email);
-            cmd.Parameters.AddWithValue("@Diachi", dto.Diachi);
-            cmd.Parameters.AddWithValue("@Makhachhang", dto.MaKhachHang);
-            con.Open();
-            int ketqua = cmd.ExecuteNonQuery();
-            con.Close();
-            return ketqua > 0;
-
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ketnoi))
+                {
+                    con.Open();
+                    string sql = @"UPDATE Khachhang SET Hoten=@Hoten, Sodienthoai=@Sodienthoai, Email=@Email, Diachi=@Diachi WHERE Makhachhang=@Makhachhang";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@Hoten", dto.Hoten);
+                    cmd.Parameters.AddWithValue("@Sodienthoai", dto.Sodienthoai);
+                    cmd.Parameters.AddWithValue("@Email", dto.Email);
+                    cmd.Parameters.AddWithValue("@Diachi", dto.Diachi);
+                    cmd.Parameters.AddWithValue("@Makhachhang", dto.MaKhachHang);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi sua khach hang: " + ex.Message);
+            }  
+            
         }
+
         public bool xoakhach(KhachhangDTO dto)
         {
-            SqlConnection con = new SqlConnection(ketnoi);
-            string sql = "Delete from Khachhang where Makhachhang=@Makhachhang";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@Makhachhang", dto.MaKhachHang);
-            con.Open();
-            int ketqua = cmd.ExecuteNonQuery();
-            con.Close();
-            return ketqua > 0;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ketnoi))
+                {
+                    con.Open();
 
+                    string sql = "DELETE FROM Khachhang WHERE Makhachhang=@Makhachhang";
+
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@Makhachhang", dto.MaKhachHang);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception("khong xoa dc khach hang:" + ex.Message);
+            }
         }
 
         public DataTable timkiemkhachhang(KhachhangDTO dto)
         {
-            SqlConnection con = new SqlConnection(ketnoi);
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ketnoi))
+                {
+                    string sql = @"SELECT * FROM Khachhang WHERE Hoten LIKE @Hoten OR Makhachhang = @Makhachhang";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@Hoten", "%" + dto.Hoten + "%");
+                    cmd.Parameters.AddWithValue("@Makhachhang", dto.MaKhachHang);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-            string sql = "SELECT * FROM Khachhang WHERE HoTen LIKE @Hoten OR MaKhachHang = @Makhachhang";
-
-            SqlCommand cmd = new SqlCommand(sql, con);
-
-            cmd.Parameters.AddWithValue("@Hoten", "%" + dto.Hoten + "%");
-            cmd.Parameters.AddWithValue("@Makhachhang", dto.MaKhachHang);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            return dt;
-
+                    return dt;
+                }
+            }
+            catch (Exception ex) 
+            { 
+                throw new Exception("Khong tim kiem duoc khach hang" + ex.Message); 
+            }
         }
+
         public DataTable lockhachhang(KhachhangDTO dto)
         {
-            SqlConnection con = new SqlConnection(ketnoi);
-            string sql = "SELECT * FROM KhachHang WHERE DiaChi LIKE @DiaChi";
-
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@DiaChi", "%" + dto.Diachi + "%");
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
-
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ketnoi))
+                {
+                    string sql = "SELECT * FROM KhachHang WHERE DiaChi LIKE @DiaChi";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@DiaChi", "%" + dto.Diachi + "%");
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Khong loc duoc khach hang:" + ex.Message);
+            }
         }
 
     }
