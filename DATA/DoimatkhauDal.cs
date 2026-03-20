@@ -1,11 +1,16 @@
 ﻿using DTO;
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DATA
 {
-    public class DangnhapDal : DBConnect
+    public class DoimatkhauDal:DBConnect
     {
-        public bool CheckLogin(DangnhapDTO nv)
+        public bool checkmatkhau(DoimatkhauDTO nv)
         {
             nv.TenDangNhap = nv.TenDangNhap.Trim();
             nv.MatKhau = nv.MatKhau.Trim();
@@ -24,29 +29,20 @@ namespace DATA
                 return count > 0;
             }
         }
-
-        public bool CheckQuyen(DangnhapDTO nv)
+        public bool Doimatkhau(DoimatkhauDTO nv)
         {
-            using (SqlConnection conn = new SqlConnection(ketnoi)) 
-            {
-                conn.Open();
-
-                string sql = "SELECT Quyen FROM NhanVien WHERE TenDangNhap=@user AND MatKhau=@pass";
-
-                SqlCommand cmd = new SqlCommand(sql, conn);
+            nv.TenDangNhap = nv.TenDangNhap.Trim();
+            nv.Matkhaumoi = nv.Matkhaumoi.Trim();
+            using (SqlConnection con = new SqlConnection(ketnoi))
+            { 
+                con.Open();
+                string sql = "UPDATE NhanVien SET MatKhau=@newpass WHERE TenDangNhap=@user ";
+                SqlCommand cmd = new SqlCommand (sql, con);
                 cmd.Parameters.AddWithValue("@user", nv.TenDangNhap);
-                cmd.Parameters.AddWithValue("@pass", nv.MatKhau);
-
-                object result = cmd.ExecuteScalar();
-
-                if (result != null)
-                {
-                    nv.Quyen = result.ToString();
-                    return nv.Quyen == "Admin";
-                }
-
-                return false;
+                cmd.Parameters.AddWithValue("@newpass", nv.Matkhaumoi);
+                return cmd.ExecuteNonQuery() > 0;
             }
         }
+
     }
 }

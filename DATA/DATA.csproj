@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DATA</RootNamespace>
     <AssemblyName>DATA</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -43,8 +43,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DBConnect.cs" />
+    <Compile Include="DoimatkhauDal.cs" />
+    <Compile Include="HopDongDATA.cs" />
     <Compile Include="KhachhangDal.cs" />
     <Compile Include="DangnhapDal.cs" />
+    <Compile Include="NhanVienDATA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using  Bus;
+using DATA;
+using DTO;
+using GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using  Bus;
-using DATA;
-using DTO;
 
 namespace Baibaovemon.GUI
 {
@@ -37,6 +38,8 @@ namespace Baibaovemon.GUI
 
             if (kq)
             {
+                CurrentUser.TenDangNhap = txtTenDangNhap.Text;
+
                 if (bus.CheckQuyen(txtTenDangNhap.Text, txtMatKhau.Text))
                 {
                     quyen = "Admin";
@@ -73,7 +76,10 @@ namespace Baibaovemon.GUI
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn có chắc muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }    

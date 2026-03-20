@@ -55,6 +55,7 @@
             this.khoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.côngNợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_doimatkhau = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -63,6 +64,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnKhachhang = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_hienthi = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +78,8 @@
             this.quảnLýToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1259, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1679, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -94,20 +97,22 @@
             // đăngNhậpToolStripMenuItem1
             // 
             this.đăngNhậpToolStripMenuItem1.Name = "đăngNhậpToolStripMenuItem1";
-            this.đăngNhậpToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.đăngNhậpToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.đăngNhậpToolStripMenuItem1.Text = "Đăng nhập";
             // 
             // đăngXuấtToolStripMenuItem1
             // 
             this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem1
             // 
             this.đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
-            this.đổiMậtKhẩuToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.đổiMậtKhẩuToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem1.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem1_Click);
             // 
             // quảnLýToolStripMenuItem
             // 
@@ -252,6 +257,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.btn_doimatkhau);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -261,9 +267,26 @@
             this.panel1.Controls.Add(this.btnKhachhang);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 504);
+            this.panel1.Size = new System.Drawing.Size(225, 627);
             this.panel1.TabIndex = 4;
+            // 
+            // btn_doimatkhau
+            // 
+            this.btn_doimatkhau.BackColor = System.Drawing.SystemColors.Info;
+            this.btn_doimatkhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_doimatkhau.Image = ((System.Drawing.Image)(resources.GetObject("btn_doimatkhau.Image")));
+            this.btn_doimatkhau.Location = new System.Drawing.Point(0, 475);
+            this.btn_doimatkhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_doimatkhau.Name = "btn_doimatkhau";
+            this.btn_doimatkhau.Size = new System.Drawing.Size(219, 69);
+            this.btn_doimatkhau.TabIndex = 7;
+            this.btn_doimatkhau.Text = "Đổi mật khẩu";
+            this.btn_doimatkhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_doimatkhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_doimatkhau.UseVisualStyleBackColor = false;
+            this.btn_doimatkhau.Click += new System.EventHandler(this.btn_doimatkhau_Click);
             // 
             // button6
             // 
@@ -271,6 +294,7 @@
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.Location = new System.Drawing.Point(0, 411);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(219, 69);
             this.button6.TabIndex = 6;
@@ -285,6 +309,7 @@
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.Location = new System.Drawing.Point(0, 341);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(219, 74);
             this.button5.TabIndex = 5;
@@ -298,7 +323,8 @@
             this.button4.BackColor = System.Drawing.SystemColors.Info;
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(0, 269);
+            this.button4.Location = new System.Drawing.Point(0, 270);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(219, 76);
             this.button4.TabIndex = 4;
@@ -312,7 +338,8 @@
             this.button3.BackColor = System.Drawing.SystemColors.Info;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 205);
+            this.button3.Location = new System.Drawing.Point(0, 206);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(219, 70);
             this.button3.TabIndex = 3;
@@ -327,6 +354,7 @@
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(0, 129);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(219, 80);
             this.button2.TabIndex = 2;
@@ -334,6 +362,7 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -341,12 +370,14 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(0, 64);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 69);
             this.button1.TabIndex = 1;
             this.button1.Text = "Nhân viên";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnKhachhang
             // 
@@ -354,6 +385,7 @@
             this.btnKhachhang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachhang.Image = ((System.Drawing.Image)(resources.GetObject("btnKhachhang.Image")));
             this.btnKhachhang.Location = new System.Drawing.Point(0, 0);
+            this.btnKhachhang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKhachhang.Name = "btnKhachhang";
             this.btnKhachhang.Size = new System.Drawing.Size(219, 70);
             this.btnKhachhang.TabIndex = 0;
@@ -365,20 +397,37 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(219, 28);
+            this.panel2.Location = new System.Drawing.Point(225, 28);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1040, 504);
+            this.panel2.Size = new System.Drawing.Size(1454, 627);
             this.panel2.TabIndex = 5;
+            // 
+            // lbl_hienthi
+            // 
+            this.lbl_hienthi.BackColor = System.Drawing.SystemColors.Info;
+            this.lbl_hienthi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hienthi.Image = ((System.Drawing.Image)(resources.GetObject("lbl_hienthi.Image")));
+            this.lbl_hienthi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_hienthi.Location = new System.Drawing.Point(1345, 0);
+            this.lbl_hienthi.Name = "lbl_hienthi";
+            this.lbl_hienthi.Size = new System.Drawing.Size(246, 28);
+            this.lbl_hienthi.TabIndex = 6;
+            this.lbl_hienthi.Text = "label1";
+            this.lbl_hienthi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_hienthi.Click += new System.EventHandler(this.lbl_hienthi_Click);
             // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1259, 532);
+            this.ClientSize = new System.Drawing.Size(1679, 655);
+            this.Controls.Add(this.lbl_hienthi);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form1";
             this.Text = "Quản lý bán xe ô tô";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -426,6 +475,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_doimatkhau;
+        private System.Windows.Forms.Label lbl_hienthi;
     }
 }
 

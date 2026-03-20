@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bus;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bus;
-using DTO;
 namespace GUI
 {
     public partial class FormKhachhang : Form
@@ -76,43 +76,57 @@ namespace GUI
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            KhachhangDTO dto = new KhachhangDTO();
-            dto.Hoten = textBox2.Text;
-            dto.Sodienthoai = textBox4.Text;
-            dto.Diachi = textBox5.Text;
-            dto.Email = textBox3.Text;
-            if (bus.Themkhachhang(dto))
+            try
             {
-                MessageBox.Show("Da them thanh cong");
-                Load_Data();
+                KhachhangDTO dto = new KhachhangDTO();
+                dto.Hoten = textBox2.Text;
+                dto.Sodienthoai = textBox4.Text;
+                dto.Diachi = textBox5.Text;
+                dto.Email = textBox3.Text;
+                if (bus.Themkhachhang(dto))
+                {
+                    MessageBox.Show("Da them thanh cong");
+                    Load_Data();
+                }
+                else
+                {
+                    MessageBox.Show("ko them duoc");
+                    Load_Data();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("ko them duoc");
-                Load_Data();
+                MessageBox.Show(ex.Message,"Lỗi", MessageBoxButtons.OK);
             }
-
             
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            KhachhangDTO dto = new KhachhangDTO();
-            dto.MaKhachHang = int.Parse(textBox1.Text);
-            dto.Hoten = textBox2.Text;
-            dto.Sodienthoai = textBox4.Text;
-            dto.Diachi = textBox5.Text;
-            dto.Email = textBox3.Text;
-            if (bus.suakhach(dto))
+            try
             {
-                MessageBox.Show("Da sua thanh cong");
-                Load_Data();
-            }
-            else
-            {
-                MessageBox.Show("ko sua duoc");
+                KhachhangDTO dto = new KhachhangDTO();
+                dto.MaKhachHang = int.Parse(textBox1.Text);
+                dto.Hoten = textBox2.Text;
+                dto.Sodienthoai = textBox4.Text;
+                dto.Diachi = textBox5.Text;
+                dto.Email = textBox3.Text;
+                if (bus.suakhach(dto))
+                {
+                    MessageBox.Show("Da sua thanh cong");
+                    Load_Data();
+                }
+                else
+                {
+                    MessageBox.Show("ko sua duoc");
 
+                }
             }
+            catch (Exception ex)
+            { 
+               MessageBox.Show(ex.Message,"Loi",MessageBoxButtons.OK);
+            }
+
         }
 
         private void btn_thoat_Click(object sender, EventArgs e)
@@ -125,31 +139,48 @@ namespace GUI
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            KhachhangDTO dto = new KhachhangDTO();
-            dto.MaKhachHang = int.Parse(textBox1.Text);
-            if (bus.xoakhach(dto))
+            try
             {
-                MessageBox.Show("Da xoa thanh cong");
-                Load_Data();
+                KhachhangDTO dto = new KhachhangDTO();
+                dto.MaKhachHang = int.Parse(textBox1.Text);
+                if (bus.xoakhach(dto))
+                {
+                    MessageBox.Show("Da xoa thanh cong");
+                    Load_Data();
+                }
+                else
+                {
+                    MessageBox.Show("ko xoa duoc");
+                }
             }
-            else
-            {
-                MessageBox.Show("ko xoa duoc");
+            catch (Exception ex)
+            { 
+               MessageBox.Show(ex.Message, "Loi", MessageBoxButtons.OK);
             }
         }
 
         private void btn_timkiem_Click(object sender, EventArgs e)
         {
-            KhachhangDTO dto = new KhachhangDTO();
-            dto.Hoten = textBox6.Text;
-            dto.MaKhachHang = string.IsNullOrEmpty(textBox6.Text) ? 0 : int.Parse(textBox6.Text);
-
-            dgv_Khachhang.DataSource = bus.Timkiemkhachhang(dto);
-
-            if (dgv_Khachhang.Rows.Count == 0)
+            try
             {
-                MessageBox.Show("Không tìm thấy khách hàng.");
-                Load_Data();
+                KhachhangDTO dto = new KhachhangDTO();
+                dto.Hoten = textBox6.Text;
+                int id;
+                if (int.TryParse(textBox6.Text, out id))
+                    dto.MaKhachHang = id;
+                else
+                    dto.MaKhachHang = 0; 
+                    dgv_Khachhang.DataSource = bus.Timkiemkhachhang(dto);
+                    dgv_Khachhang.DataSource = dto;
+                if (dgv_Khachhang.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng.");
+                    Load_Data();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Loi",MessageBoxButtons.OK);
             }
         }
 
@@ -166,15 +197,26 @@ namespace GUI
 
         private void btn_loc_Click(object sender, EventArgs e)
         {
-            KhachhangDTO dto = new KhachhangDTO();
-            dto.Diachi = txt_loc.Text;
-            dgv_Khachhang.DataSource = bus.lockhachhang(dto);
-            if (dgv_Khachhang.Rows.Count == 0)
+            try
             {
-                MessageBox.Show("Không loc duoc tên khách hàng.");
-                Load_Data();
+                KhachhangDTO dto = new KhachhangDTO();
+                dto.Diachi = txt_loc.Text;
+                dgv_Khachhang.DataSource = bus.lockhachhang(dto);
+                if (dgv_Khachhang.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không loc duoc tên khách hàng.");
+                    Load_Data();
+                }
             }
-            
+            catch (Exception ex)
+            { 
+               MessageBox.Show(ex.Message, "loi", MessageBoxButtons.OK);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
