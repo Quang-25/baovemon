@@ -47,5 +47,19 @@ namespace Baibaovemon
             f.StartPosition = FormStartPosition.CenterScreen;
             f.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Xetrongkho f = new Xetrongkho(quyen);
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Phukienphutung f = new Phukienphutung();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog();
+        }
     }
 }

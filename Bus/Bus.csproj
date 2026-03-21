@@ -44,7 +44,9 @@
     <Compile Include="Class1.cs" />
     <Compile Include="KhachhangBus.cs" />
     <Compile Include="DangnhapBus.cs" />
+    <Compile Include="PhukienphutungBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XetrongkhoBus.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DATA\DATA.csproj">

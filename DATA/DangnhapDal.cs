@@ -5,7 +5,8 @@ namespace DATA
 {
     public class DangnhapDal
     {
-        string ketnoi = @"Data Source=LAPTOP-VN022S39\SQLEXPRESS;Initial Catalog= QuanLyBanXe;Integrated Security=True";
+        string ketnoi = @"Data Source=ADMIN-PC\SQLEXPRESS01;Initial Catalog=QuanLyBanXe;Integrated Security=True";
+
 
         public bool CheckLogin(DangnhapDTO nv)
         {
